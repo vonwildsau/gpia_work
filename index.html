@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>GPIA - Work</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" rel="stylesheet">
+    <script language="JavaScript" src="js/myscript.js?n=1"></script>
+  </head>  
+  
+  <body>
+    
+    <div id="map-wrapper">
+      
+      
+      <div id="map"></div>
+      </div>
+        
+      
+    <div id="sidebar">
+      WHERE WE WORK
+      
+      <!-- We create a div where the feature data will go when clicked on: -->
+        <div class="sidebar-feature-content"></div>
+      
+      </div>     
+      
+    
+    
+    <script class="popup-template" type="x-tmpl-mustache">
+      <div style="font-family: 'titlefont'; margin-top: 15px; margin-right: 15px; color: black;">
+        
+        <div><b>{{city}}</b></div>
+        <div><b>{{country}}</b></div>
+        
+   
+      </div>
+    </script>
+    
+     <script class="sidebar-group-template" type="x-tmpl-mustache">
+  
+  <div style="font-size: 20px;">{{Country}}</div>
+         {{#rows}}
+          <div><b style="color: #b0ceff;">Location:</b>   {{city}}  {{country}} </div>
+          <div><b style="color: #b0ceff;">Name:</b>    {{name}}</div>
+          <div><b style="color: #b0ceff;">Project:</b> {{project}}</div>
+          <div><b style="color: #b0ceff;">Details:</b> {{details}}</div>
+          <br>
+        {{/rows}}
+    </script>
+    
+    
+     <!-- Load Leaflet and Carto libraries -->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://libs.cartocdn.com/carto.js/v4.1.11/carto.min.js"></script>
+    
+     <!-- import the Mustache library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.min.js"></script>
+     <script src="./script.js"></script>
+    
+    
+  </body>
+</html>
