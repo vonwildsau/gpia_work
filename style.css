@@ -44,14 +44,29 @@ a {
 .sidebar-feature-content {
   margin-top: 20px;
   font-size: 14px;
-  color: white;
-  height: calc(100% - 130px);
+  color: #b0ceff;
+  height: calc(100% - 210px);
   width: 340px;
   overflow: auto;
   line-height: 1.5;
   padding: 10px;
   background-color: #004f91;
   border-radius: 5px;
+}
+
+.sidebar-title {
+  margin-top: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #000875;
+  height: 40px;
+  width: 340px;
+  line-height: 1.5;
+  padding: 10px;
+  background-color: #004f91;
+  border-radius: 5px;
+  text-align: center;
+  
 }
 
 ::-webkit-scrollbar {

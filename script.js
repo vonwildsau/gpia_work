@@ -83,7 +83,7 @@ var sidebar = document.querySelector('.sidebar-feature-content');
 layerCities.on('featureClicked', function (event) {
   var content = '<div>' + event.data['city'] + ', ' + event.data['country'] + '</div>';
   console.log(event.data['city'])
-    var dataset = "SELECT * FROM work_data WHERE city ILIKE '" + event.data['city'] + "'";
+    var dataset = "SELECT * FROM work_data WHERE city ILIKE '%25" + event.data['city'] + "%25'";
   fetch('https://vonwildsau.carto.com/api/v2/sql/?q=' + dataset)
   .then(function (response) {
     return response.json();
@@ -106,10 +106,11 @@ var sidebar = document.querySelector('.sidebar-feature-content');
 layerCountry.on('featureClicked', function (event) {
   var content = '<div>' + event.data['country'] + '</div>';
   console.log(event.data['country'])
-  var dataset = "SELECT * FROM work_data WHERE country ILIKE '" + event.data['country'] + "'";
+  var dataset = "SELECT * FROM work_data WHERE country ILIKE '%25" + event.data['country'] + "%25'";
   fetch('https://vonwildsau.carto.com/api/v2/sql/?q=' + dataset)
   .then(function (response) {
     return response.json();
+    console.log(response.json());
   })
   .then(function (data) {
     // All of the data returned is in the response variable
@@ -123,6 +124,21 @@ layerCountry.on('featureClicked', function (event) {
     sidebarContainer.innerHTML = content;
     });
   sidebar.innerHTML = content;
+});
+
+var sidebarTitle = document.querySelector('.sidebar-title');
+layerCountry.on('featureClicked', function (event) {
+  var content = '<div>' + event.data['country'] + '</div>';
+  var dataset = "SELECT * FROM work_data WHERE country ILIKE '%25" + event.data['country'] + "%25'";
+  fetch('https://vonwildsau.carto.com/api/v2/sql/?q=' + dataset)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    var sidebarTitleContainer = document.querySelector('.sidebar-title');
+    sidebarTitleContainer.innerHTML = content;
+    });
+  sidebarTitle.innerHTML = content;
 });
 
 

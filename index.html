@@ -30,32 +30,27 @@
       WHERE WE WORK
       
       <!-- We create a div where the feature data will go when clicked on: -->
-        <div class="sidebar-feature-content"></div>
+      <div class="sidebar-title" type="x-tmpl-mustache"></div>  
+      <div class="sidebar-feature-content"></div>
       
       </div>     
       
     
     
-    <script class="popup-template" type="x-tmpl-mustache">
-      <div style="font-family: 'titlefont'; margin-top: 15px; margin-right: 15px; color: black;">
-        
-        <div><b>{{city}}</b></div>
-        <div><b>{{country}}</b></div>
-        
-   
-      </div>
+    <script class="popup-template" type="x-tmpl-mustache"></script>
+    
+    <script class="sidebar-title-group-template" type="x-tmpl-mustache">
+       <div><b> {{country}} </b></div>
     </script>
     
      <script class="sidebar-group-template" type="x-tmpl-mustache">
-  
-  <div style="font-size: 20px;">{{Country}}</div>
-         {{#rows}}
-          <div><b style="color: #b0ceff;">Location:</b>   {{city}}  {{country}} </div>
-          <div><b style="color: #b0ceff;">Name:</b>    {{name}}</div>
-          <div><b style="color: #b0ceff;">Project:</b> {{project}}</div>
-          <div><b style="color: #b0ceff;">Details:</b> {{details}}</div>
+          {{#rows}}
+          <div><b style="color: #000875;">Location:</b>   {{city}}  {{country}} </div>
+          <div><b style="color: #000875;">Name:</b>    {{name}}</div>
+          <div><b style="color: #000875;">Project:</b> {{project}}</div>
+          <div><b style="color: #000875;">Details:</b> {{details}}</div>
           <br>
-        {{/rows}}
+          {{/rows}}
     </script>
     
     
