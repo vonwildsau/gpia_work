@@ -44,7 +44,7 @@ a {
 .sidebar-feature-content {
   margin-top: 20px;
   font-size: 14px;
-  color: #b0ceff;
+  color: white;
   height: calc(100% - 210px);
   width: 340px;
   overflow: auto;
@@ -58,7 +58,7 @@ a {
   margin-top: 20px;
   font-size: 28px;
   font-weight: bold;
-  color: #000875;
+  color: #b0ceff;
   height: 40px;
   width: 340px;
   line-height: 1.5;
