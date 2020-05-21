@@ -38,7 +38,7 @@ a {
   background-color: #005fad;
 /*   border: 3px solid #000875; */
   font-size: 35px;
-  color: #b0ceff;
+  color: #FFFFFF;
 }
 
 .sidebar-feature-content {
@@ -138,4 +138,68 @@ span {
 @font-face {
   font-family: "titlefont";
   src: url("https://cdn.glitch.com/f0ecb9a5-e498-4c02-ab43-b235a0a4ab4e%2FNeue-Regular.otf?v=1581370116237");
+}
+
+@media only screen and (max-width: 800px) {
+  
+  #map-wrapper {
+  width: calc(100% - 200px);
+}
+  
+  #sidebar {
+  width: 200px;
+  margin-left: calc(100vw - 200px);
+  font-size: 16px;
+}
+
+.sidebar-feature-content {
+  font-size: 12px;
+  height: calc(100% - 210px);
+  width: 140px;
+}
+
+.sidebar-title {
+  font-size: 18px;
+  width: 140px;
+}
+
+  
+  
+@media only screen and (max-width: 450px) {
+  
+  #map-wrapper {
+  width: 100%;
+  height: calc(100% - 150px);
+}
+  
+  #sidebar {
+  width: 50%;   
+  height: 150px;
+  margin-top: calc(100vh - 150px);
+  margin-left: 0px; 
+  padding: 10px;
+    
+}
+
+.sidebar-feature-content {
+  margin-top: -130px;
+  margin-left: 95%; 
+  height: 110px;
+  width: 85%;
+}
+
+.sidebar-title {
+  height: 70px;
+  width: 78%; 
+}
+
+  #map {
+    width: 100%;
+    height: calc(100vh - 150px);
+  }
+  
+  @media only screen and (max-width: 350px) {
+    
+    #sidebar {
+  font-size: 12px;
 }
