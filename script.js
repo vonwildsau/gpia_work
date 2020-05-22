@@ -28,13 +28,13 @@ L.tileLayer('https://api.mapbox.com/styles/v1/nicostettler/ck67e1izr0apx1ipbuyp7
 
 var client = new carto.Client({
   apiKey: 'default_public',
-  username: 'vonwildsau'
+  username: 'intaffairs'
 });
 
 // Country Layer
 
 var sourceCountry = new carto.source.Dataset('countrypolygons_1');
-var sourceCountry = new carto.source.SQL("SELECT * FROM vonwildsau.countrypolygons_1");
+var sourceCountry = new carto.source.SQL("SELECT * FROM countrypolygons_1");
 
 var styleCountry = new carto.style.CartoCSS(`
 #layer {
@@ -55,7 +55,7 @@ var layerCountry = new carto.layer.Layer(sourceCountry, styleCountry, {
 // Cities Layer
 
 var sourceCities = new carto.source.Dataset('citypoints_2');
-var sourceCities = new carto.source.SQL("SELECT * FROM vonwildsau.citypoints_2");
+var sourceCities = new carto.source.SQL("SELECT * FROM citypoints_2");
 
 var styleCities = new carto.style.CartoCSS(`
 #layer {
@@ -83,7 +83,7 @@ layerCities.on('featureClicked', function (event) {
   var content = '<div>' + event.data['city'] + ', ' + event.data['country'] + '</div>';
   console.log(event.data['city'])
     var dataset = "SELECT * FROM work_data WHERE city ILIKE '%25" + event.data['city'] + "%25'";
-  fetch('https://vonwildsau.carto.com/api/v2/sql/?q=' + dataset)
+  fetch('https://intaffairs.carto.com/api/v2/sql/?q=' + dataset)
   .then(function (response) {
     return response.json();
   })
@@ -106,7 +106,7 @@ layerCountry.on('featureClicked', function (event) {
   var content = '<div>' + event.data['country'] + '</div>';
   console.log(event.data['country'])
   var dataset = "SELECT * FROM work_data WHERE country ILIKE '%25" + event.data['country'] + "%25'";
-  fetch('https://vonwildsau.carto.com/api/v2/sql/?q=' + dataset)
+  fetch('https://intaffairs.carto.com/api/v2/sql/?q=' + dataset)
   .then(function (response) {
     return response.json();
     console.log(response.json());
@@ -129,7 +129,7 @@ var sidebarTitle = document.querySelector('.sidebar-title');
 layerCountry.on('featureClicked', function (event) {
   var content = '<div>' + event.data['country'] + '</div>';
   var dataset = "SELECT * FROM work_data WHERE country ILIKE '%25" + event.data['country'] + "%25'";
-  fetch('https://vonwildsau.carto.com/api/v2/sql/?q=' + dataset)
+  fetch('https://intaffairs.carto.com/api/v2/sql/?q=' + dataset)
   .then(function (response) {
     return response.json();
   })
@@ -150,7 +150,7 @@ var dataset = 'SELECT * from work_data';
 var sidebarGroupTemplate = document.querySelector('.sidebar-group-template').innerHTML;
 // Request the data from Carto using fetch.
 // You will need to change 'brelsfoeagain' below to your username, otherwise this should work.
-fetch('https://vonwildsau.carto.com/api/v2/sql/?q=' + dataset)
+fetch('https://intaffairs.carto.com/api/v2/sql/?q=' + dataset)
   .then(function (response) {
     return response.json();
   })
