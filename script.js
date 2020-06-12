@@ -82,7 +82,7 @@ var sidebar = document.querySelector('.sidebar-feature-content');
 layerCities.on('featureClicked', function (event) {
   var content = '<div>' + event.data['city'] + ', ' + event.data['country'] + '</div>';
   console.log(event.data['city'])
-    var dataset = "SELECT * FROM work_data WHERE city ILIKE '%25" + event.data['city'] + "%25'";
+    var dataset = "SELECT * FROM work_data_1 WHERE city ILIKE '%25" + event.data['city'] + "%25'";
   fetch('https://intaffairs.carto.com/api/v2/sql/?q=' + dataset)
   .then(function (response) {
     return response.json();
@@ -105,7 +105,7 @@ var sidebar = document.querySelector('.sidebar-feature-content');
 layerCountry.on('featureClicked', function (event) {
   var content = '<div>' + event.data['country'] + '</div>';
   console.log(event.data['country'])
-  var dataset = "SELECT * FROM work_data WHERE country ILIKE '%25" + event.data['country'] + "%25'";
+  var dataset = "SELECT * FROM work_data_1 WHERE country ILIKE '%25" + event.data['country'] + "%25'";
   fetch('https://intaffairs.carto.com/api/v2/sql/?q=' + dataset)
   .then(function (response) {
     return response.json();
@@ -128,7 +128,7 @@ layerCountry.on('featureClicked', function (event) {
 var sidebarTitle = document.querySelector('.sidebar-title');
 layerCountry.on('featureClicked', function (event) {
   var content = '<div>' + event.data['country'] + '</div>';
-  var dataset = "SELECT * FROM work_data WHERE country ILIKE '%25" + event.data['country'] + "%25'";
+  var dataset = "SELECT * FROM work_data_1 WHERE country ILIKE '%25" + event.data['country'] + "%25'";
   fetch('https://intaffairs.carto.com/api/v2/sql/?q=' + dataset)
   .then(function (response) {
     return response.json();
